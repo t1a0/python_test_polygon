@@ -253,10 +253,10 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
 }
 </script>
     <h1>test_report.html</h1>
-    <p>Report generated on 12-Jun-2023 at 02:20:16 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.2.0</p>
+    <p>Report generated on 16-Jun-2023 at 00:57:53 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.2.0</p>
     <h2>Summary</h2>
-    <p>47 tests ran in 0.08 seconds. </p>
-    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">36 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">11 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
+    <p>42 tests ran in 0.08 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">28 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">14 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
     <h2>Results</h2>
     <table id="results-table">
       <thead id="results-table-head">
@@ -333,39 +333,66 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
       <tbody class="failed results-table-row">
         <tr>
           <td class="col-result">Failed</td>
+          <td class="col-name">test_drunk_polish_calculator.py::test_op_divide[4-2-0.5]</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">x = 4, y = 2, expected_result = 0.5<br/><br/>    @pytest.mark.parametrize(<br/>        &quot;x, y, expected_result&quot;,<br/>        [<br/>            (4, 2, 0.5),<br/>            (2, 0, 0),<br/>            (4, -2, -0.5),<br/>            (-4, 2, -0.5),<br/>            (-4, -2, 0.5),<br/>            (2, 0.5, 0.25)<br/>        ],<br/>    )<br/>    def test_op_divide(x, y, expected_result):<br/>&gt;       assert op_divide(x, y) == expected_result<br/><span class="error">E       assert 2.0 == 0.5</span><br/><span class="error">E        +  where 2.0 = op_divide(4, 2)</span><br/><br/>test_drunk_polish_calculator.py:83: AssertionError<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">test_drunk_polish_calculator.py::test_op_divide[2-0-0]</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">x = 2, y = 0, expected_result = 0<br/><br/>    @pytest.mark.parametrize(<br/>        &quot;x, y, expected_result&quot;,<br/>        [<br/>            (4, 2, 0.5),<br/>            (2, 0, 0),<br/>            (4, -2, -0.5),<br/>            (-4, 2, -0.5),<br/>            (-4, -2, 0.5),<br/>            (2, 0.5, 0.25)<br/>        ],<br/>    )<br/>    def test_op_divide(x, y, expected_result):<br/>&gt;       assert op_divide(x, y) == expected_result<br/><br/>test_drunk_polish_calculator.py:83: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/><br/>x = 2, y = 0<br/><br/>    def op_divide(x, y):<br/>&gt;       return x / y<br/><span class="error">E       ZeroDivisionError: division by zero</span><br/><br/>drunk_polish_calculator.py:11: ZeroDivisionError<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">test_drunk_polish_calculator.py::test_op_divide[4--2--0.5]</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">x = 4, y = -2, expected_result = -0.5<br/><br/>    @pytest.mark.parametrize(<br/>        &quot;x, y, expected_result&quot;,<br/>        [<br/>            (4, 2, 0.5),<br/>            (2, 0, 0),<br/>            (4, -2, -0.5),<br/>            (-4, 2, -0.5),<br/>            (-4, -2, 0.5),<br/>            (2, 0.5, 0.25)<br/>        ],<br/>    )<br/>    def test_op_divide(x, y, expected_result):<br/>&gt;       assert op_divide(x, y) == expected_result<br/><span class="error">E       assert -2.0 == -0.5</span><br/><span class="error">E        +  where -2.0 = op_divide(4, -2)</span><br/><br/>test_drunk_polish_calculator.py:83: AssertionError<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">test_drunk_polish_calculator.py::test_op_divide[-4-2--0.5]</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">x = -4, y = 2, expected_result = -0.5<br/><br/>    @pytest.mark.parametrize(<br/>        &quot;x, y, expected_result&quot;,<br/>        [<br/>            (4, 2, 0.5),<br/>            (2, 0, 0),<br/>            (4, -2, -0.5),<br/>            (-4, 2, -0.5),<br/>            (-4, -2, 0.5),<br/>            (2, 0.5, 0.25)<br/>        ],<br/>    )<br/>    def test_op_divide(x, y, expected_result):<br/>&gt;       assert op_divide(x, y) == expected_result<br/><span class="error">E       assert -2.0 == -0.5</span><br/><span class="error">E        +  where -2.0 = op_divide(-4, 2)</span><br/><br/>test_drunk_polish_calculator.py:83: AssertionError<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">test_drunk_polish_calculator.py::test_op_divide[-4--2-0.5]</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">x = -4, y = -2, expected_result = 0.5<br/><br/>    @pytest.mark.parametrize(<br/>        &quot;x, y, expected_result&quot;,<br/>        [<br/>            (4, 2, 0.5),<br/>            (2, 0, 0),<br/>            (4, -2, -0.5),<br/>            (-4, 2, -0.5),<br/>            (-4, -2, 0.5),<br/>            (2, 0.5, 0.25)<br/>        ],<br/>    )<br/>    def test_op_divide(x, y, expected_result):<br/>&gt;       assert op_divide(x, y) == expected_result<br/><span class="error">E       assert 2.0 == 0.5</span><br/><span class="error">E        +  where 2.0 = op_divide(-4, -2)</span><br/><br/>test_drunk_polish_calculator.py:83: AssertionError<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">test_drunk_polish_calculator.py::test_op_divide[2-0.5-0.25]</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">x = 2, y = 0.5, expected_result = 0.25<br/><br/>    @pytest.mark.parametrize(<br/>        &quot;x, y, expected_result&quot;,<br/>        [<br/>            (4, 2, 0.5),<br/>            (2, 0, 0),<br/>            (4, -2, -0.5),<br/>            (-4, 2, -0.5),<br/>            (-4, -2, 0.5),<br/>            (2, 0.5, 0.25)<br/>        ],<br/>    )<br/>    def test_op_divide(x, y, expected_result):<br/>&gt;       assert op_divide(x, y) == expected_result<br/><span class="error">E       assert 4.0 == 0.25</span><br/><span class="error">E        +  where 4.0 = op_divide(2, 0.5)</span><br/><br/>test_drunk_polish_calculator.py:83: AssertionError<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
           <td class="col-name">test_drunk_polish_calculator.py::test_main[6 2 /-3.0]</td>
           <td class="col-duration">0.00</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log">monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x7f93929664d0&gt;, capsys = &lt;_pytest.capture.CaptureFixture object at 0x7f9392965b90&gt;, value = &#x27;6 2 /&#x27;, expected_result = &#x27;3.0&#x27;<br/><br/>    @pytest.mark.parametrize(<br/>        &quot;value, expected_result&quot;,<br/>        [<br/>            (&quot;3 2 +&quot;, &quot;5.0&quot;),<br/>            (&quot;3 2 -&quot;, &quot;1.0&quot;),<br/>            (&quot;3 2 *&quot;, &quot;6.0&quot;),<br/>            (&quot;6 2 /&quot;, &quot;3.0&quot;),<br/>            (&quot;3 2 + 1 +&quot;, &quot;6.0&quot;),<br/>            (&quot;3 2 + 1 -&quot;, &quot;2.0&quot;),<br/>            (&quot;3 2 + 1 - 4 * &quot;, &quot;1.0&quot;),<br/>            (&quot;3 2 + 1 - 4 * 2 /&quot;, &quot;3.0&quot;),<br/>        ],<br/>    )<br/>    def test_main(monkeypatch, capsys, value, expected_result):<br/>        monkeypatch.setattr(&quot;builtins.input&quot;, lambda _: value)<br/>    <br/>        main()<br/>    <br/>        result = capsys.readouterr().out<br/>&gt;       assert result == (expected_result + &quot;\n&quot;)<br/><span class="error">E       AssertionError: assert &#x27;0.3333333333333333\n&#x27; == &#x27;3.0\n&#x27;</span><br/><span class="error">E         - 3.0</span><br/><span class="error">E         + 0.3333333333333333</span><br/><br/>test_drunk_polish_calculator.py:121: AssertionError<br/></div></td></tr></tbody>
-      <tbody class="failed results-table-row">
-        <tr>
-          <td class="col-result">Failed</td>
-          <td class="col-name">test_drunk_polish_calculator.py::test_main[3 2 + 1 --2.0]</td>
-          <td class="col-duration">0.00</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log">monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x7f939290c4d0&gt;, capsys = &lt;_pytest.capture.CaptureFixture object at 0x7f939290ce10&gt;, value = &#x27;3 2 + 1 -&#x27;, expected_result = &#x27;2.0&#x27;<br/><br/>    @pytest.mark.parametrize(<br/>        &quot;value, expected_result&quot;,<br/>        [<br/>            (&quot;3 2 +&quot;, &quot;5.0&quot;),<br/>            (&quot;3 2 -&quot;, &quot;1.0&quot;),<br/>            (&quot;3 2 *&quot;, &quot;6.0&quot;),<br/>            (&quot;6 2 /&quot;, &quot;3.0&quot;),<br/>            (&quot;3 2 + 1 +&quot;, &quot;6.0&quot;),<br/>            (&quot;3 2 + 1 -&quot;, &quot;2.0&quot;),<br/>            (&quot;3 2 + 1 - 4 * &quot;, &quot;1.0&quot;),<br/>            (&quot;3 2 + 1 - 4 * 2 /&quot;, &quot;3.0&quot;),<br/>        ],<br/>    )<br/>    def test_main(monkeypatch, capsys, value, expected_result):<br/>        monkeypatch.setattr(&quot;builtins.input&quot;, lambda _: value)<br/>    <br/>        main()<br/>    <br/>        result = capsys.readouterr().out<br/>&gt;       assert result == (expected_result + &quot;\n&quot;)<br/><span class="error">E       AssertionError: assert &#x27;4.0\n&#x27; == &#x27;2.0\n&#x27;</span><br/><span class="error">E         - 2.0</span><br/><span class="error">E         ? ^</span><br/><span class="error">E         + 4.0</span><br/><span class="error">E         ? ^</span><br/><br/>test_drunk_polish_calculator.py:121: AssertionError<br/></div></td></tr></tbody>
-      <tbody class="failed results-table-row">
-        <tr>
-          <td class="col-result">Failed</td>
-          <td class="col-name">test_drunk_polish_calculator.py::test_main[3 2 + 1 - 4 * -1.0]</td>
-          <td class="col-duration">0.00</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log">monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x7f939297ea10&gt;, capsys = &lt;_pytest.capture.CaptureFixture object at 0x7f939297cad0&gt;, value = &#x27;3 2 + 1 - 4 * &#x27;, expected_result = &#x27;1.0&#x27;<br/><br/>    @pytest.mark.parametrize(<br/>        &quot;value, expected_result&quot;,<br/>        [<br/>            (&quot;3 2 +&quot;, &quot;5.0&quot;),<br/>            (&quot;3 2 -&quot;, &quot;1.0&quot;),<br/>            (&quot;3 2 *&quot;, &quot;6.0&quot;),<br/>            (&quot;6 2 /&quot;, &quot;3.0&quot;),<br/>            (&quot;3 2 + 1 +&quot;, &quot;6.0&quot;),<br/>            (&quot;3 2 + 1 -&quot;, &quot;2.0&quot;),<br/>            (&quot;3 2 + 1 - 4 * &quot;, &quot;1.0&quot;),<br/>            (&quot;3 2 + 1 - 4 * 2 /&quot;, &quot;3.0&quot;),<br/>        ],<br/>    )<br/>    def test_main(monkeypatch, capsys, value, expected_result):<br/>        monkeypatch.setattr(&quot;builtins.input&quot;, lambda _: value)<br/>    <br/>        main()<br/>    <br/>        result = capsys.readouterr().out<br/>&gt;       assert result == (expected_result + &quot;\n&quot;)<br/><span class="error">E       AssertionError: assert &#x27;16.0\n&#x27; == &#x27;1.0\n&#x27;</span><br/><span class="error">E         - 1.0</span><br/><span class="error">E         + 16.0</span><br/><span class="error">E         ?  +</span><br/><br/>test_drunk_polish_calculator.py:121: AssertionError<br/></div></td></tr></tbody>
-      <tbody class="failed results-table-row">
-        <tr>
-          <td class="col-result">Failed</td>
-          <td class="col-name">test_drunk_polish_calculator.py::test_main[3 2 + 1 - 4 * 2 /-3.0]</td>
-          <td class="col-duration">0.00</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log">monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x7f9392967cd0&gt;, capsys = &lt;_pytest.capture.CaptureFixture object at 0x7f9392967910&gt;, value = &#x27;3 2 + 1 - 4 * 2 /&#x27;, expected_result = &#x27;3.0&#x27;<br/><br/>    @pytest.mark.parametrize(<br/>        &quot;value, expected_result&quot;,<br/>        [<br/>            (&quot;3 2 +&quot;, &quot;5.0&quot;),<br/>            (&quot;3 2 -&quot;, &quot;1.0&quot;),<br/>            (&quot;3 2 *&quot;, &quot;6.0&quot;),<br/>            (&quot;6 2 /&quot;, &quot;3.0&quot;),<br/>            (&quot;3 2 + 1 +&quot;, &quot;6.0&quot;),<br/>            (&quot;3 2 + 1 -&quot;, &quot;2.0&quot;),<br/>            (&quot;3 2 + 1 - 4 * &quot;, &quot;1.0&quot;),<br/>            (&quot;3 2 + 1 - 4 * 2 /&quot;, &quot;3.0&quot;),<br/>        ],<br/>    )<br/>    def test_main(monkeypatch, capsys, value, expected_result):<br/>        monkeypatch.setattr(&quot;builtins.input&quot;, lambda _: value)<br/>    <br/>        main()<br/>    <br/>        result = capsys.readouterr().out<br/>&gt;       assert result == (expected_result + &quot;\n&quot;)<br/><span class="error">E       AssertionError: assert &#x27;0.125\n&#x27; == &#x27;3.0\n&#x27;</span><br/><span class="error">E         - 3.0</span><br/><span class="error">E         + 0.125</span><br/><br/>test_drunk_polish_calculator.py:121: AssertionError<br/></div></td></tr></tbody>
+            <div class="log">monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x7fb68b67d6d0&gt;, capsys = &lt;_pytest.capture.CaptureFixture object at 0x7fb68b67ebd0&gt;, value = &#x27;6 2 /&#x27;, expected_result = &#x27;3.0&#x27;<br/><br/>    @pytest.mark.parametrize(<br/>        &quot;value, expected_result&quot;,<br/>        [<br/>            (&quot;3 2 +&quot;, &quot;5.0&quot;),<br/>            (&quot;3 2 -&quot;, &quot;1.0&quot;),<br/>            (&quot;3 2 *&quot;, &quot;6.0&quot;),<br/>            (&quot;6 2 /&quot;, &quot;3.0&quot;),<br/>        ],<br/>    )<br/>    def test_main(monkeypatch, capsys, value, expected_result):<br/>        monkeypatch.setattr(&quot;builtins.input&quot;, lambda _: value)<br/>    <br/>        main()<br/>    <br/>        result = capsys.readouterr().out<br/>&gt;       assert result == (expected_result + &quot;\n&quot;)<br/><span class="error">E       AssertionError: assert &#x27;0.3333333333333333\n&#x27; == &#x27;3.0\n&#x27;</span><br/><span class="error">E         - 3.0</span><br/><span class="error">E         + 0.3333333333333333</span><br/><br/>test_drunk_polish_calculator.py:116: AssertionError<br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
@@ -549,69 +576,6 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">test_drunk_polish_calculator.py::test_op_divide[4-2-2]</td>
-          <td class="col-duration">0.00</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="empty log">No log output captured.</div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">test_drunk_polish_calculator.py::test_op_divide[0-2-0]</td>
-          <td class="col-duration">0.00</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="empty log">No log output captured.</div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">test_drunk_polish_calculator.py::test_op_divide[4--2--2]</td>
-          <td class="col-duration">0.00</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="empty log">No log output captured.</div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">test_drunk_polish_calculator.py::test_op_divide[-4-2--2]</td>
-          <td class="col-duration">0.00</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="empty log">No log output captured.</div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">test_drunk_polish_calculator.py::test_op_divide[-4--2-2]</td>
-          <td class="col-duration">0.00</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="empty log">No log output captured.</div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">test_drunk_polish_calculator.py::test_op_divide[5.5-2-2.75]</td>
-          <td class="col-duration">0.00</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="empty log">No log output captured.</div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">test_drunk_polish_calculator.py::test_op_divide[5.5-2.5-2.2]</td>
-          <td class="col-duration">0.00</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="empty log">No log output captured.</div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
           <td class="col-name">test_drunk_polish_calculator.py::test_error_op_divide[3-2-TypeError0]</td>
           <td class="col-duration">0.00</td>
           <td class="col-links"></td></tr>
@@ -676,15 +640,6 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">test_drunk_polish_calculator.py::test_main[3 2 *-6.0]</td>
-          <td class="col-duration">0.00</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="empty log">No log output captured.</div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">test_drunk_polish_calculator.py::test_main[3 2 + 1 +-6.0]</td>
           <td class="col-duration">0.00</td>
           <td class="col-links"></td></tr>
         <tr>

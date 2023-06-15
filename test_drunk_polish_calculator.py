@@ -71,13 +71,12 @@ def test_op_multiply(x, y, expected_result):
 @pytest.mark.parametrize(
     "x, y, expected_result",
     [
-        (4, 2, 2),
-        (0, 2, 0),
-        (4, -2, -2),
-        (-4, 2, -2),
-        (-4, -2, 2),
-        (5.5, 2, 2.75),
-        (5.5, 2.5, 2.2),
+        (4, 2, 0.5),
+        (2, 0, 0),
+        (4, -2, -0.5),
+        (-4, 2, -0.5),
+        (-4, -2, 0.5),
+        (2, 0.5, 0.25)
     ],
 )
 def test_op_divide(x, y, expected_result):
@@ -106,10 +105,6 @@ def test_error_op_divide(x, y, expected_error):
         ("3 2 -", "1.0"),
         ("3 2 *", "6.0"),
         ("6 2 /", "3.0"),
-        ("3 2 + 1 +", "6.0"),
-        ("3 2 + 1 -", "2.0"),
-        ("3 2 + 1 - 4 * ", "1.0"),
-        ("3 2 + 1 - 4 * 2 /", "3.0"),
     ],
 )
 def test_main(monkeypatch, capsys, value, expected_result):
