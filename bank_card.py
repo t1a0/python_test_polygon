@@ -11,7 +11,7 @@ class Card:
         self.card_number = card_number
         self.exp_date = (
             exp_date[-4:] + "-" + exp_date[:2] + "-01"
-        )  # Змінна exp_date форматується у вигляді 'рік-місяць-01'
+        )  # Змінна exp_date форматується у вигляді 'YY-MMMM-01'
         self.cvv = cvv
         self.issue_date = issue_date
         self.user_id = user_id
