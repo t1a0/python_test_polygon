@@ -28,14 +28,13 @@ class Card:
             raise ValueError(
                 "Unexpected card status!"
             )  # Помилка, якщо переданий статус картки не відповідає очікуваним значенням ('new', 'blocked', 'active')
-        elif value.lower() == "active" and self._card_status == "blocked":
+        elif self._card_status == "blocked" :
             raise ValueError(
                 "[Error] You cannot interact with a blocked card!"
             )  # Помилка взаємодії з карткою, якщо вона заблокована
         else:
-            self._card_status = (
-                value.lower()
-            )  # Привласнення змінній card_status нового значення
+            self._card_status = value.lower()
+              # Привласнення змінній card_status нового значення
 
     def attributes(self) -> tuple:
         return (
