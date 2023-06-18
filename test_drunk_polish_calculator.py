@@ -30,13 +30,13 @@ def test_error_op_plus(x, y, expected_error):
 @pytest.mark.parametrize(
     "x, y, expected_result",
     [
-        (3, 2, 1),
-        (2, 3, -1),
-        (-3, 2, -5),
-        (-3, -2, -1),
-        (-3.5, -2, -5.5),
-        (-3, 2.5, -5.5),
-        (-3.5, -2.5, -6),
+        (3, 2, -1),
+        (2, 3, 1),
+        (-3, 2, 5),
+        (-3, -2, 1),
+        (-3.5, -2, 1.5),
+        (-3, 2.5, 5.5),
+        (-3.5, -2.5, 1),
     ],
 )
 def test_op_minus(x, y, expected_result):
