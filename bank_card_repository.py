@@ -12,7 +12,7 @@ class BankCardRepository:
             date[-4:] + "-" + date[:2] + first_day_of_month
         )  # Перетворення формату дати
 
-    def __init__(self):
+    def __init__(self, host: str, user: str, password: str, db_name: str):
         try:
             self.connection = psycopg2.connect(
                 host=host, user=user, password=password, database=db_name
@@ -32,7 +32,7 @@ class BankCardRepository:
                                         card_exp_date DATE NOT NULL,
                                         card_cvv INT NOT NULL,
                                         card_issue_date DATE NOT NULL,
-                                        card_user_id UUID NOT NULL,
+                                        card_uuid UUID NOT NULL,
                                         card_status VARCHAR(20));"""
         )
 
@@ -68,10 +68,16 @@ class BankCardRepository:
             self.cursor.fetchall()
         )  # Отримання та повернення всіх рядків, що відповідають вказаній даті видачі
 
+    def find_by_uuid(self, uuid: str) -> tuple:
+        self.cursor.execute("SELECT * FROM cards WHERE card_uuid = %s", (uuid,))
+        return (
+            self.cursor.fetchall()
+        )  # Отримання та повернення всіх рядків, що відповідають вказаному uuid
+
 
 if __name__ == "__main__":
     # Створення екземпляру BankCardRepository
-    bank = BankCardRepository()
+    bank = BankCardRepository(host, user, password, db_name)
 
     # Створення об'єкту Card
     card1 = Card(
@@ -80,8 +86,7 @@ if __name__ == "__main__":
 
     # Збереження картки в базі даних
     bank.save(card1)
-
-    # Отримання картки за номером
+    #  Отримання картки за номером
     print(bank.get(1234_5678_9012_0000))
 
     # Пошук карток за датою закінчення строку дії
@@ -99,3 +104,6 @@ if __name__ == "__main__":
     card1.card_status = "active"
     bank.update_status(card1)
     print(bank.get(1234_5678_9012_0000))
+
+    # Пошук карток за UUID
+    print(bank.find_by_uuid("b88603d9-91f6-4e7b-a088-d746e75e07f1"))
