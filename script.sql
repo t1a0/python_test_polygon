@@ -17,15 +17,15 @@ INSERT INTO warehouse VALUES(1, 'Склад компанії "Alpha Light"', 'К
 							 (3, 'Склад компанії "Sun Box"', 'Одеса');
 
 INSERT INTO product VALUES	(1,'Ноутбук Dell XPS 13', 44999.99, 200),
-							(2,'Смартфон iPhone 12 Pro', 38999.99, 500),
-							(3,'Телевізор Samsung QLED Q80A', 55999.99, 52),
-							(4,'Навушники Sony WH-1000XM4', 6499.99, 540),
-							(5,'Фотокамера Canon EOS R6', 84999.99, 210),
-							(6,'Ноутбук Lenovo ThinkPad X1 Carbon', 42999.99, 340),
-							(7,'Смартфон Samsung Galaxy S21 Ultra', 33999.99, 560),
-							(8,'Телевізор LG OLED CX', 49999.99, 59),
-							(9,'Навушники Bose QuietComfort 35 II', 7499.99, 420),
-							(10,'Фотокамера Nikon Z7 II', 89999.99, 120);
+							(2,'Смартфон iPhone 12 Pro', 38999.99, 500, 2),
+							(3,'Телевізор Samsung QLED Q80A', 55999.99, 1),
+							(4,'Навушники Sony WH-1000XM4', 6499.99, 540, 3),
+							(5,'Фотокамера Canon EOS R6', 84999.99, 210, 3),
+							(6,'Ноутбук Lenovo ThinkPad X1 Carbon', 42999.99, 2),
+							(7,'Смартфон Samsung Galaxy S21 Ultra', 33999.99, 2),
+							(8,'Телевізор LG OLED CX', 49999.99, 59, 1),
+							(9,'Навушники Bose QuietComfort 35 II', 7499.99, 3),
+							(10,'Фотокамера Nikon Z7 II', 89999.99, 120, 3);
 
 
 UPDATE product SET pd_price = pd_price * 0.20 WHERE pd_quantity < 150;
