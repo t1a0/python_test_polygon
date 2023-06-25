@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>{{title}}</title>
+	<style>
+		body {
+			background: #f2f2f2;
+			font-family: Arial, sans-serif;
+			font-size: 16px;
+			color: #333333;
+			margin: 0;
+			padding: 0;
+		}
+
+		.container {
+			width: 500px;
+			margin: 50px auto;
+			padding: 20px;
+			background: #ffffff;
+			border-radius: 5px;
+			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+		}
+
+		h1 {
+			text-align: center;
+			margin-top: 0;
+			color: #333333;
+		}
+
+		form {
+			margin-top: 20px;
+		}
+
+		label {
+			display: block;
+			margin-bottom: 10px;
+			color: #666666;
+		}
+
+		input[type="text"] {
+			height: 30px;
+			width: 100%;
+			margin-bottom: 10px;
+			padding: 5px;
+			border: 1px solid #cccccc;
+			border-radius: 3px;
+			font-size: 16px;
+			color: #333333;
+		}
+
+		button[type="submit"] {
+			height: 40px;
+			width: 100%;
+			margin-top: 10px;
+			font-size: 16px;
+			color: #ffffff;
+			background: #4CAF50;
+			border: none;
+			border-radius: 3px;
+			cursor: pointer;
+		}
+
+		.error {
+			color: red;
+			margin-top: 10px;
+			text-align: center;
+		}
+
+		.result {
+			margin-top: 20px;
+			padding: 10px;
+			background-color: #f9f9f9;
+			border: 1px solid #cccccc;
+			border-radius: 3px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<h1>Пошук карток</h1>
+		<form action="/check" method="post">
+			<label for="number">Номер картки:</label>
+			<input id="number" placeholder="Приклад: 1111-2222-3333-4444" type="text" name="number" value="">
+
+			<button type="submit">Знайти</button>
+
+			<p class="error">{{error}}</p>
+		</form>
+			<h1>Результат пошуку:</h1>
+		<div class="result">
+			{{result}}
+		</div>
+	</div>
+
+	<script>
+		function openModal(result) {
+			var resultDiv = document.querySelector('.result');
+			resultDiv.innerHTML = result;
+		}
+	</script>
+</body>
+</html>
