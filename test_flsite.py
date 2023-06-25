@@ -212,7 +212,7 @@ def test_create_card_success(number, exp_date, cvv, issue_date, expected_result)
         (1111222233334445, "[]"),
     ],
 )
-def test_show_success(number, expected_result):
+def test_check_success(number, expected_result):
     url = "http://127.0.0.1:5000/check"
     data = {
         "number": number,
@@ -233,7 +233,7 @@ def test_show_success(number, expected_result):
         (1111222, "Невірний номер !"),
     ],
 )
-def test_show_error(number, expected_result):
+def test_check_error(number, expected_result):
     url = "http://127.0.0.1:5000/check"
     data = {
         "number": number,
