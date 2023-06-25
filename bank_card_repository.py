@@ -74,7 +74,10 @@ class BankCardRepository:
             self.cursor.fetchall()
         )  # Отримання та повернення всіх рядків, що відповідають вказаному uuid
 
-
+    def disconnect(self):
+        self.connection.close()
+        self.cursor.close()
+        
 if __name__ == "__main__":
     # Створення екземпляру BankCardRepository
     bank = BankCardRepository(host, user, password, db_name)
