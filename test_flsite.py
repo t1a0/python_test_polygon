@@ -40,9 +40,6 @@ def test_check_exp_date(exp_date, expected_result):
     assert flsite.check_exp_date(exp_date) == expected_result
 
 
-import pytest
-
-
 @pytest.mark.parametrize(
     "date, expected_result",
     [
