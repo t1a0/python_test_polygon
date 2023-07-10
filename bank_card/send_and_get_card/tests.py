@@ -7,7 +7,7 @@ import json
 class CardsTest(TestCase):
 
     def test_get_card(self):
-        # Create a unique card
+        # Create a card
         card = BankCard(number=1111222233334444, exp_date='2020-01-01', cvv=123, issue_date = '2000-01-01')
         card.save()
         url = reverse('bank_card') + '?number=1111222233334444'
@@ -19,7 +19,7 @@ class CardsTest(TestCase):
         expected_response = {
             'card': {
                 'number': card.number,
-                'exp_date': str(card.exp_date),  # Convert exp_date to string
+                'exp_date': str(card.exp_date),
                 'cvv': card.cvv,
                 'issue_date': str(card.issue_date),
                 'uuid': str(card.uuid),
@@ -48,7 +48,7 @@ class CardsTest(TestCase):
         expected_response = {
             'card': {
                 'number': card.number,
-                'exp_date': str(card.exp_date),  # Convert exp_date to string
+                'exp_date': str(card.exp_date),
                 'cvv': card.cvv,
                 'issue_date': str(card.issue_date),
                 'uuid': str(card.uuid),

@@ -16,7 +16,5 @@ class BankCard(models.Model):
         number_str = str(self.number)
         range1 = number_str[0:15:2]
         range2 = number_str[1:15:2] + '0'
-
         summ = sum((int(i) * 2) % 9 + int(j) for i, j in zip(range1, range2))
-
         return (summ + int(number_str[-1])) % 10 == 0
