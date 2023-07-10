@@ -64,3 +64,13 @@ class CardsTest(TestCase):
         card = BankCard(number=1111222233334443, exp_date='2025-01-01', cvv=123, issue_date= "2000-01-01")
         result = card.is_valid()
         self.assertEquals(result, False)
+
+    def test_is_valid_true(self):
+        # Create a card with a valid number
+        card = BankCard(number=4003600000000014, exp_date='2025-01-01', cvv=123, issue_date= "2000-01-01")
+
+        # Check if the card is valid
+        result = card.is_valid()
+
+        # Verify that the card is valid
+        self.assertEquals(result, True)
