@@ -61,11 +61,6 @@ class CardsTest(TestCase):
         self.assertEquals(response_data, expected_response)
 
     def test_is_valid_false(self):
-        # Create a card with an invalid number
         card = BankCard(number=1111222233334443, exp_date='2025-01-01', cvv=123, issue_date= "2000-01-01")
-
-        # Check if the card is valid
         result = card.is_valid()
-
-        # Verify that the card is invalid
         self.assertEquals(result, False)
