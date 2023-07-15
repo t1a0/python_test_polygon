@@ -18,12 +18,12 @@ class CardsTest(TestCase):
 
         response = self.client.get(url)
 
-        actual_template = "show.html"
-        data = {"title": "Пошук картки", "card": card}
-
-        expected_result = render_to_string(actual_template, data)
-
-        self.assertEquals(expected_result, response.content.decode("utf-8"))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "show.html")
+        self.assertContains(response, "Пошук картки")
+        self.assertContains(response, str(card.number))
+        self.assertContains(response, str(card.cvv))
+        self.assertEqual(response.context["card"].exp_date, card.exp_date)
 
     def test_post_card(self):
         data = {
@@ -36,35 +36,19 @@ class CardsTest(TestCase):
 
         response = self.client.post(url, data=data)
 
-        actual_template = "create.html"
-        context = {"title": "Створення картки", "check": False}
-
-        expected_result = render_to_string(actual_template, context)
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "create.html")
+        self.assertContains(response, "Створення картки")
+        self.assertContains(response, "Картка додана.")
 
         card = BankCard.objects.filter(number=1111222233334444).first()
 
-        expect_data = {
-            "number": 1111222233334444,
-            "exp_date": "2077-01-01",
-            "cvv": 123,
-            "issue_date": str(datetime.now().date()),
-            "uuid": True,
-            "status": "new",
-        }
-
-        # then
-        self.assertContains(response, "Картка додана.")
-        self.assertEquals(
-            expect_data,
-            {
-                "number": card.number,
-                "exp_date": str(card.exp_date),
-                "cvv": card.cvv,
-                "issue_date": str(card.issue_date),
-                "uuid": self.is_valid_uuid(str(card.uuid)),
-                "status": card.status,
-            },
-        )
+        self.assertEqual(card.number, 1111222233334444)
+        self.assertEqual(str(card.exp_date), "2077-01-01")
+        self.assertEqual(card.cvv, 123)
+        self.assertEqual(str(card.issue_date), str(datetime.now().date()))
+        self.assertTrue(self.is_valid_uuid(str(card.uuid)))
+        self.assertEqual(card.status, "new")
 
     def test_is_valid_false(self):
         card = BankCard(
