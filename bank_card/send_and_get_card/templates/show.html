@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block form %}
+
+<form action="{% url 'show_card' %}" method="get">
+    <p>
+        <span>Номер картки:</span>
+        <input placeholder="1111-2222-3333-4444" type='text' name='number' value="">
+    </p>
+    <button type="submit">Отримати</button>
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+</form>
+
+{% endblock form %}
+
+{% block content %}
+
+{% if card %}
+    <div class="show">
+        <p class="card_info">
+            <span class="param">Номер картки:</span> <span class="value">{{ card.number }}</span>
+        </p>
+        <p class="card_info">
+            <span class="param">Закінчення сроку:</span> <span class="value">{{ card.exp_date|date:"" }}</span>
+        </p>
+        <p class="card_info">
+            <span class="param">CVV код:</span> <span class="value">{{ card.cvv }}</span>
+        </p>
+        <p class="card_info">
+            <span class="param">Дата видачі:</span> <span class="value">{{ card.issue_date }}</span>
+        </p>
+        <p class="card_info">
+            <span class="param">id власника:</span> <span class="value user_id">{{ card.uuid }}</span>
+        </p>
+        <p class="card_info">
+            <span class="param">Статус:</span> <span class="value">{{ card.status }}</span>
+        </p>
+    </div>
+{% else %}
+    <div class="error">
+        {% if request.GET.number and not error %}
+            <p class="error_message">
+                <span class="text_error">Картку з номером "{{ request.GET.number }}" не знайдено</span>
+            </p>
+        {% endif %}
+    </div>
+{% endif %}
+
+{% endblock content %}

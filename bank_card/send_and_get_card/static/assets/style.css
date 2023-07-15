@@ -1,0 +1,121 @@
+body {
+			background: #f2f2f2;
+			font-family: Arial, sans-serif;
+			font-size: 16px;
+			color: #333333;
+			margin: 0;
+			padding: 0;
+		}
+
+		.container {
+			width: 500px;
+			margin: 50px auto;
+			padding: 20px;
+			background: #ffffff;
+			border-radius: 5px;
+			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+		}
+
+		h1 {
+			text-align: center;
+			margin-top: 0;
+			color: #333333;
+		}
+
+		.menu {
+			display: flex;
+			justify-content: center;
+			margin-top: 20px;
+		}
+
+		.menu button {
+			height: 40px;
+			width: 150px;
+			margin: 0 10px;
+			font-size: 16px;
+			color: #ffffff;
+			background: #4CAF50;
+			border: none;
+			border-radius: 3px;
+			cursor: pointer;
+		}
+
+		.menu button:hover {
+			background: #45a049;
+		}
+
+		.menu button:focus {
+			outline: none;
+		}
+		form {
+			width: 300px;
+            margin: 0 auto;
+		}
+
+		label {
+			display: block;
+			margin-bottom: 10px;
+			color: #666666;
+		}
+
+		input[type="text"] {
+			height: 30px;
+			width: 100%;
+			margin-bottom: 10px;
+			padding: 5px;
+			border: 1px solid #cccccc;
+			border-radius: 3px;
+			font-size: 16px;
+			color: #333333;
+		}
+
+		button[type="submit"] {
+			height: 40px;
+			width: 100%;
+			margin-top: 10px;
+			font-size: 16px;
+			color: #ffffff;
+			background: #4CAF50;
+			border: none;
+			border-radius: 3px;
+			cursor: pointer;
+		}
+
+		.error {
+			color: red;
+			margin-top: 10px;
+			text-align: center;
+		}
+
+		.success {
+			color: green;
+			margin-top: 10px;
+			text-align: center;
+		}
+
+		.result {
+			margin-top: 20px;
+			padding: 10px;
+			background-color: #f9f9f9;
+			border: 1px solid #cccccc;
+			border-radius: 3px;
+		}
+
+.show {
+  text-align: center;
+}
+
+
+.show .param {
+  font-weight: bold;
+}
+
+
+.show .value {
+  font-weight: bold;
+}
+
+
+.show .user_id {
+  font-weight: bold;
+}

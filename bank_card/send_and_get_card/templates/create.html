@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+<head>
+	<title>{{title}}</title>
+</head>
+{% block form %}
+    <div class="container">
+        <h1>Форма для додавання нових банківських карток</h1>
+        <form action="{% url 'create_card' %}" method="post">
+            <label for="number">Номер картки:</label>
+            <input id="number" placeholder="Приклад: 1111-2222-3333-4444" type="text" name="number" value="{{ number }}">
+
+            <label for="exp_date">Кінцевий термін:</label>
+            <input id="exp_date" placeholder="Приклад: 2077-01-01" type="text" name="exp_date" value="{{ exp_date }}">
+
+            <label for="cvv">CVV код:</label>
+            <input id="cvv" placeholder="Приклад: 123" type="text" name="cvv" value="{{ cvv }}">
+
+            <button type="submit">Додати</button>
+
+            <p class="error">{{ error }}</p>
+            <p class="success">{{ success }}</p>
+        </form>
+    </div>
+{% endblock form %}
