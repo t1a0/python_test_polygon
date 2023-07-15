@@ -9,7 +9,6 @@ from datetime import datetime
 
 class CardsTest(TestCase):
     def test_get_card(self):
-        # given
         create_card = BankCard(number=1111222233334444, exp_date="2077-01-01", cvv=456)
         create_card.save()
 
@@ -17,7 +16,6 @@ class CardsTest(TestCase):
 
         url = reverse("show_card") + "?number=1111222233334444"
 
-        # when
         response = self.client.get(url)
 
         actual_template = "show.html"
@@ -25,11 +23,9 @@ class CardsTest(TestCase):
 
         expected_result = render_to_string(actual_template, data)
 
-        # then
         self.assertEquals(expected_result, response.content.decode("utf-8"))
 
     def test_post_card(self):
-        # given
         data = {
             "number": 1111222233334444,
             "exp_date": "2077-01-01",
@@ -38,16 +34,13 @@ class CardsTest(TestCase):
 
         url = reverse("create_card")
 
-        # when
         response = self.client.post(url, data=data)
 
-        # template
         actual_template = "create.html"
         context = {"title": "Створення картки", "check": False}
 
         expected_result = render_to_string(actual_template, context)
 
-        # db
         card = BankCard.objects.filter(number=1111222233334444).first()
 
         expect_data = {
