@@ -7,6 +7,11 @@ name = "pypi"
 pytest = "*"
 black = "*"
 psycopg2-binary = "*"
+pytest-cov = "*"
+pytest-html = "*"
+flask = "*"
+bs4 = "*"
+requests = "*"
 
 [dev-packages]
 
